@@ -6,6 +6,7 @@ import { selectError, selectIsLoading } from 'redux/selectors';
 import { Form } from "./Form/Form";
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
+import { Loader } from './Loader/Loader';
 
 import { Title, Contacts } from './App.styled';
 
@@ -24,7 +25,7 @@ export const App = () => {
       <Form />
       <Contacts>Contacts</Contacts>
       <Filter />
-      {isLoading && !error && <p>Request in progress...</p>}
+      {isLoading && !error && <Loader/>}
       <ContactList />
     </>
   );

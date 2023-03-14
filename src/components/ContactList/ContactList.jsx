@@ -4,6 +4,7 @@ import { deleteContact } from 'redux/operations';
 import { selectVisibleContacts } from 'redux/selectors';
 import { selectValueFilter } from 'redux/selectors';
 import PropTypes from 'prop-types';
+
 import { List, Item, DelBtn  } from './ContactList.styled';
 
 
@@ -20,10 +21,10 @@ export function ContactList () {
   if (filtered) {
     return (
       <List>
-        {filtered.map(({ id, name, number }) => (
+        {filtered.map(({ id, name, phone }) => (
           <Item key={id}>
             <span>{name}: </span>
-            <span>{number} </span>
+            <span>{phone} </span>
             <DelBtn
               type="button"
               onClick={() => dispatch(deleteContact(id))}
